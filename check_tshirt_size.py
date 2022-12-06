@@ -4,6 +4,6 @@ def size(cms):
     elif cms > 38 and cms < 42:
         return 'M'
     elif cms == 38:
-        return "
+        return ' '
     else:
         return 'L'
