@@ -1,9 +1,11 @@
 from alerter_send import network_alert_stub
+from farenheit_to_celcius import getCelciusFromFarenheit
 
 alert_failure_count = 0
+NETWORK_ALERT_THRESHOLD = 100
 
 def alert_in_celcius(farenheit):
-    celcius = (farenheit - 32) * 5 / 9
+    celcius = getCelciusFromFarenheit(farenheit)
     returnCode = network_alert_stub(celcius)
     if returnCode != 200:
         # non-ok response is not an error! Issues happen in life!
